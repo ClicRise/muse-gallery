@@ -14,7 +14,6 @@ export const messages = {
     "Hello Ikashi Jewels, I am looking for bridal jewellery. Could you please share your bridal designs and details?",
   custom:
     "Hello Ikashi Jewels, I would like to discuss a custom-designed piece. Could you please share the available customization options?",
-    "Hello Ikashi Jewels, I saw a design in your gallery and would like to enquire about it.",
   product: (name: string) =>
     `Hello Ikashi Jewels, I am interested in ${name}. Could you please share its price, specifications, availability, and any applicable certification details?`,
 };
