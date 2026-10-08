@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { collectionCards, messages, products } from "@/lib/site";
-import { CtaBanner, GoldRule, ProductCard, WaButton } from "@/components/site";
+import { Carousel, CtaBanner, GoldRule, ProductCard, WaButton } from "@/components/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
