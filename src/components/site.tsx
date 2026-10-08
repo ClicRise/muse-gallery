@@ -176,7 +176,7 @@ export function FloatingWhatsApp() {
   );
 }
 
-export function ProductCard({ p, category }: { p: Product; category?: string }) {
+export function ProductCard({ p, category }: { p: Product; category?: string | undefined }) {
   return (
     <article className="group flex flex-col bg-card">
       <div className="aspect-[4/5] overflow-hidden bg-muted">

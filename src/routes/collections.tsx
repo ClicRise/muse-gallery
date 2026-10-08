@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { CATEGORIES, messages, products, type Category } from "@/lib/site";
 import { GoldRule, PageHero, ProductCard, WaButton } from "@/components/site";
 
-type Search = { category?: Category };
+type Search = { category?: Category | undefined };
 
 export const Route = createFileRoute("/collections")({
   validateSearch: (s: Record<string, unknown>): Search => ({
