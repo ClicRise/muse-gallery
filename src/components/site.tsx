@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { useState, type ReactNode } from "react";
-import { Menu, X, Instagram, MessageCircle } from "lucide-react";
+import { useRef, useState, type ReactNode } from "react";
+import { Menu, X, Instagram, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL, messages, waLink, type Product } from "@/lib/site";
 
 const nav = [
@@ -177,7 +177,7 @@ export function FloatingWhatsApp() {
 
 export function ProductCard({ p, category }: { p: Product; category?: string | undefined }) {
   return (
-    <article className="group flex flex-col bg-card">
+    <article className="group flex w-full flex-col bg-card">
       <div className="aspect-[4/5] overflow-hidden bg-muted">
         <img
           src={p.image}
@@ -217,5 +217,29 @@ export function CtaBanner({ title, text, message, label }: { title: string; text
       <p className="mx-auto mt-6 max-w-xl leading-relaxed text-ivory/75">{text}</p>
       <WaButton message={message} variant="gold" className="mt-10">{label}</WaButton>
     </section>
+  );
+}
+
+export function Carousel({ children, label }: { children: ReactNode; label: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const scroll = (dir: number) => {
+    const el = ref.current;
+    if (el) el.scrollBy({ left: dir * el.clientWidth * 0.9, behavior: "smooth" });
+  };
+  const btn =
+    "flex size-11 items-center justify-center rounded-full border border-primary/30 bg-background text-primary transition-colors hover:border-primary hover:bg-primary hover:text-primary-foreground";
+  return (
+    <div role="region" aria-roledescription="carousel" aria-label={label}>
+      <div
+        ref={ref}
+        className="-mx-5 flex snap-x snap-mandatory scroll-px-5 gap-5 overflow-x-auto px-5 pb-2 [scrollbar-width:none] md:mx-0 md:scroll-px-0 md:px-0 [&::-webkit-scrollbar]:hidden"
+      >
+        {children}
+      </div>
+      <div className="mt-8 flex justify-center gap-3">
+        <button className={btn} onClick={() => scroll(-1)} aria-label={`Previous ${label}`}><ChevronLeft className="size-5" /></button>
+        <button className={btn} onClick={() => scroll(1)} aria-label={`Next ${label}`}><ChevronRight className="size-5" /></button>
+      </div>
+    </div>
   );
 }

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { collectionCards, messages, products } from "@/lib/site";
-import { CtaBanner, GoldRule, ProductCard, WaButton } from "@/components/site";
+import { Carousel, CtaBanner, GoldRule, ProductCard, WaButton } from "@/components/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -114,23 +114,23 @@ function Home() {
           </div>
           <Link to="/collections" className="eyebrow border-b border-gold pb-1 text-primary">View all</Link>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {collectionCards.map((c, i) => (
+        <Carousel label="Collections">
+          {collectionCards.map((c) => (
             <Link
               key={c.title}
               to="/collections"
               search={{ category: c.title }}
-              className={`group relative overflow-hidden ${i === 0 ? "sm:col-span-2 sm:row-span-2" : ""}`}
+              className="group relative block w-[78%] shrink-0 snap-start overflow-hidden sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3.75rem)/4)]"
             >
-              <img src={c.image} alt={c.title} loading="lazy" className="aspect-[4/5] size-full object-cover transition-transform duration-700 group-hover:scale-105" />
+              <img src={c.image} alt={c.title} loading="lazy" className="aspect-[4/5] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-gradient-to-t from-forest/85 via-forest/10 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6 text-ivory">
-                <h3 className={i === 0 ? "text-4xl" : "text-2xl"}>{c.title}</h3>
+                <h3 className="text-2xl">{c.title}</h3>
                 <p className="mt-1 text-sm text-ivory/75">{c.blurb}</p>
               </div>
             </Link>
           ))}
-        </div>
+        </Carousel>
       </section>
 
       {/* Featured */}
@@ -141,8 +141,14 @@ function Home() {
             <h2 className="mt-4 text-4xl text-primary md:text-5xl">Pieces to Fall For</h2>
             <GoldRule className="mt-6" />
           </div>
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((p) => <ProductCard key={p.id} p={p} />)}
+          <div className="mt-14">
+            <Carousel label="Featured jewellery">
+              {featured.map((p) => (
+                <div key={p.id} className="flex w-[78%] shrink-0 snap-start sm:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-3.75rem)/4)]">
+                  <ProductCard p={p} />
+                </div>
+              ))}
+            </Carousel>
           </div>
         </div>
       </section>
