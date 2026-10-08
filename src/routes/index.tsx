@@ -1,38 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { collectionCards, messages, products } from "@/lib/site";
 import { Carousel, CtaBanner, GoldRule, ProductCard, WaButton } from "@/components/site";
-import { ArrowRight } from "lucide-react";
-import type { Category } from "@/lib/site";
-
-const pillars: { category: Category; eyebrow: string; title: string; short: string; copy: string; image: string; alt: string }[] = [
-  {
-    category: "Natural Diamond Jewellery",
-    eyebrow: "Certified Brilliance",
-    title: "Natural Diamonds",
-    short: "Diamonds",
-    copy: "GIA- and IGI-certified natural diamonds, set to capture light from every angle.",
-    image: "/images/diamond-lace-necklace-set.jpg",
-    alt: "Diamond lace necklace and earrings on a velvet bust",
-  },
-  {
-    category: "Bridal Jewellery",
-    eyebrow: "For the Day Itself",
-    title: "Bridal Jewellery",
-    short: "Bridal",
-    copy: "Statement chokers, layered sets and heirloom pieces for the moments that stay with you.",
-    image: "/images/polki-emerald-choker.jpg",
-    alt: "Polki and emerald bridal choker",
-  },
-  {
-    category: "Fine Gold Jewellery",
-    eyebrow: "Shaped by Tradition",
-    title: "Fine Gold",
-    short: "Gold",
-    copy: "Sculpted gold, pearls and gemstones — craftsmanship you can feel in every detail.",
-    image: "/images/pearl-elephant-kada.jpg",
-    alt: "Gold elephant pearl kada",
-  },
-];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -119,44 +87,37 @@ function Home() {
       </section>
 
       {/* Intro */}
-      <section className="bg-card px-5 py-24 text-center md:py-32">
-        <GoldRule />
-        <h2 className="mx-auto mt-8 max-w-3xl text-4xl text-primary md:text-6xl">Jewellery That Speaks Without Words</h2>
-        <p className="mx-auto mt-8 max-w-2xl leading-relaxed text-muted-foreground">
-          Ikashi Jewels brings together natural diamond jewellery, bridal jewellery and fine gold jewellery —
-          pieces chosen for their authentic craftsmanship and trusted purity, meant to be worn, treasured and
-          passed on.
-        </p>
-        <div className="mx-auto mt-16 grid max-w-6xl gap-6 text-left md:grid-cols-3">
-          {pillars.map((p, i) => (
-            <Link
-              key={p.category}
-              to="/collections"
-              search={{ category: p.category }}
-              className="group relative block overflow-hidden bg-forest focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
-            >
-              <img
-                src={p.image}
-                alt={p.alt}
-                loading="lazy"
-                className="aspect-[3/4] w-full object-cover opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-60"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-transparent" />
-              <div className="absolute inset-3 border border-gold/0 transition-colors duration-500 group-hover:border-gold/60" />
-              <div className="absolute inset-x-0 bottom-0 p-7 text-ivory">
-                <p className="eyebrow text-gold">0{i + 1} — {p.eyebrow}</p>
-                <h3 className="mt-3 text-3xl md:text-4xl">{p.title}</h3>
-                <p className="mt-3 max-h-24 text-sm leading-relaxed text-ivory/80 transition-all duration-500 md:max-h-0 md:opacity-0 md:group-hover:max-h-24 md:group-hover:opacity-100 md:group-focus-visible:max-h-24 md:group-focus-visible:opacity-100">
-                  {p.copy}
-                </p>
-                <span className="mt-5 inline-flex items-center gap-2 border-b border-gold pb-1 text-[0.7rem] tracking-[0.22em] text-gold uppercase">
-                  Explore {p.short}
-                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
-                </span>
-              </div>
-            </Link>
-          ))}
+      <section className="relative overflow-hidden bg-card px-5 py-24 md:py-32">
+        <span aria-hidden className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 font-serif text-[16rem] leading-none text-gold/10 select-none">&ldquo;</span>
+        <div className="relative mx-auto max-w-4xl text-center">
+          <p className="eyebrow text-gold">The Ikashi Philosophy</p>
+          <h2 className="mx-auto mt-6 max-w-3xl text-4xl text-primary md:text-6xl">Jewellery That Speaks Without Words</h2>
+          <GoldRule className="mt-8" />
+          <blockquote className="mx-auto mt-10 max-w-3xl">
+            <p className="font-serif text-2xl leading-snug text-foreground italic md:text-[2rem]">
+              “A piece of fine jewellery should feel like it was always meant to be yours — quiet in its confidence,
+              timeless in its grace.”
+            </p>
+            <footer className="eyebrow mt-6 text-muted-foreground">— Ikashi Jewels</footer>
+          </blockquote>
+          <p className="mx-auto mt-10 max-w-2xl leading-relaxed text-muted-foreground">
+            We bring together natural diamond jewellery, bridal pieces and fine gold — chosen for authentic
+            craftsmanship and trusted purity, and meant to be worn, treasured and passed on.
+          </p>
         </div>
+        <dl className="relative mx-auto mt-16 grid max-w-5xl border-y border-gold/40 md:grid-cols-3">
+          {[
+            ["Certified Natural Diamonds", "A specialization in GIA- and IGI-certified natural diamonds."],
+            ["Authentic Craftsmanship", "Considered settings and finishing, down to the smallest detail."],
+            ["Trusted Purity", "Fine materials, with details shared openly on enquiry."],
+          ].map(([t, d], i) => (
+            <div key={t} className={`px-6 py-8 text-center ${i ? "border-t border-gold/40 md:border-t-0 md:border-l" : ""}`}>
+              <span aria-hidden className="mx-auto mb-4 block size-1.5 rotate-45 bg-gold" />
+              <dt className="font-serif text-2xl text-primary">{t}</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       {/* Collections */}
