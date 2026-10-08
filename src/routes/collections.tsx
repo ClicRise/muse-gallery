@@ -6,7 +6,7 @@ type Search = { category?: Category | undefined };
 
 export const Route = createFileRoute("/collections")({
   validateSearch: (s: Record<string, unknown>): Search => ({
-    category: CATEGORIES.includes(s.category as Category) ? (s.category as Category) : undefined,
+    category: CATEGORIES.includes(s['category'] as Category) ? (s['category'] as Category) : undefined,
   }),
   head: () => ({
     meta: [
