@@ -55,7 +55,7 @@ export function Header() {
   return (
     <>
       <div className="bg-forest py-2 text-center text-[0.68rem] tracking-[0.28em] text-gold uppercase">
-        GIA & IGI certified natural diamonds · Enquiries welcome on WhatsApp
+        GIA & IGI certified natural diamonds
       </div>
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:h-24 md:px-8">
