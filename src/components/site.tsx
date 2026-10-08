@@ -191,7 +191,7 @@ export function ProductCard({ p, category }: { p: Product; category?: string | u
         <p className="eyebrow text-gold">{category ?? p.categories[0]}</p>
         <h3 className="mt-2 text-2xl text-foreground">{p.name}</h3>
         <p className="mt-2 text-sm text-muted-foreground">Enquire for Price</p>
-        <WaButton message={messages.product(p.name)} variant="outline" className="mt-5 w-full px-4">
+        <WaButton message={messages.product(p.name)} variant="outline" className="mt-5 w-full px-3 whitespace-nowrap">
           Enquire on WhatsApp
         </WaButton>
       </div>
