@@ -188,8 +188,8 @@ function Home() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <Link to="/gallery" className="inline-flex border border-primary px-7 py-3.5 text-xs tracking-[0.2em] text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground">
-            View the Gallery
+          <Link to="/collections" className="inline-flex border border-primary px-7 py-3.5 text-xs tracking-[0.2em] text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground">
+            View the Collections
           </Link>
         </div>
       </section>
