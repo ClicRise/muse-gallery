@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useRef, useState, type ReactNode } from "react";
 import { Menu, X, Instagram, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL, messages, waLink, type Product } from "@/lib/site";
+import { assetUrl, INSTAGRAM_HANDLE, INSTAGRAM_URL, messages, waLink, type Product } from "@/lib/site";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -60,7 +60,7 @@ export function Header() {
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:h-24 md:px-8">
           <Link to="/" className="flex items-center gap-3" aria-label="Ikashi Jewels home">
-            <img src="/images/logo.jpg" alt="Ikashi Jewels logo" className="size-12 rounded-full md:size-16" />
+            <img src={assetUrl("/images/logo.jpg")} alt="Ikashi Jewels logo" className="size-12 rounded-full md:size-16" />
             <span className="hidden flex-col leading-tight sm:flex">
               <span className="font-serif text-2xl text-primary">Ikashi Jewels</span>
               <span className="text-[0.6rem] tracking-[0.3em] text-gold uppercase">For the Muse in You</span>
@@ -117,7 +117,7 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-4 md:px-8">
         <div className="md:col-span-2">
           <div className="flex items-center gap-4">
-            <img src="/images/logo.jpg" alt="Ikashi Jewels logo" className="size-16 rounded-full" />
+            <img src={assetUrl("/images/logo.jpg")} alt="Ikashi Jewels logo" className="size-16 rounded-full" />
             <div>
               <p className="font-serif text-3xl text-ivory">Ikashi Jewels</p>
               <p className="eyebrow text-gold">For the Muse in You</p>

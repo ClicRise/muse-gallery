@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { messages } from "@/lib/site";
+import { assetUrl, messages } from "@/lib/site";
 import { GoldRule, PageHero, WaButton } from "@/components/site";
 
 export const Route = createFileRoute("/about")({
@@ -18,25 +18,25 @@ const blocks = [
   {
     eyebrow: "Our Story",
     title: "Ikashi Jewels",
-    img: "/images/emerald-drop-earrings.jpg",
+    img: assetUrl("/images/emerald-drop-earrings.jpg"),
     text: "Ikashi Jewels is a jewellery brand devoted to natural diamond jewellery, bridal jewellery and fine gold jewellery. Our name carries a simple promise: For the Muse in You — jewellery that reflects the woman who wears it.",
   },
   {
     eyebrow: "Jewellery & Craftsmanship",
     title: "Authentic Craftsmanship",
-    img: "/images/polki-emerald-choker.jpg",
+    img: assetUrl("/images/polki-emerald-choker.jpg"),
     text: "From traditional bridal chokers to delicate diamond earrings, each design reflects authentic craftsmanship and trusted purity — the values at the heart of everything we create and curate.",
   },
   {
     eyebrow: "Natural Diamond Focus",
     title: "GIA & IGI Certified",
-    img: "/images/diamond-lace-necklace-set.jpg",
+    img: assetUrl("/images/diamond-lace-necklace-set.jpg"),
     text: "We specialize in GIA- and IGI-certified natural diamonds. Certification details for individual pieces are shared on enquiry, so you can choose with confidence.",
   },
   {
     eyebrow: "A Personal Approach",
     title: "A Conversation, Not a Checkout",
-    img: "/images/pearl-diamond-jhumkas.jpg",
+    img: assetUrl("/images/pearl-diamond-jhumkas.jpg"),
     text: "Fine jewellery deserves a personal conversation. Reach us on WhatsApp to ask about a piece, discuss bridal requirements or share inspiration for something made just for you. Ikashi Jewels connects with clients from Hyderabad and Mumbai.",
   },
 ];

@@ -13,6 +13,7 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Header, Footer, FloatingWhatsApp } from "@/components/site";
+import { assetUrl } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -93,8 +94,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap",
       },
       { rel: "stylesheet", href: appCss },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/images/logo.jpg" },
+      { rel: "icon", href: assetUrl("/favicon.png"), type: "image/png" },
+      { rel: "apple-touch-icon", href: assetUrl("/images/logo.jpg") },
     ],
   }),
   shellComponent: RootShell,

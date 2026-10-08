@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { collectionCards, messages, products } from "@/lib/site";
+import { assetUrl, collectionCards, messages, products } from "@/lib/site";
 import { Carousel, CtaBanner, GoldRule, ProductCard, WaButton } from "@/components/site";
 
 export const Route = createFileRoute("/")({
@@ -24,7 +24,7 @@ function Home() {
         <div className="md:hidden">
           <div className="relative">
             <img
-              src="/images/emerald-drop-earrings.jpg"
+              src={assetUrl("/images/emerald-drop-earrings.jpg")}
               alt="Model wearing emerald and diamond drop earrings"
               className="aspect-[4/5] w-full object-cover object-top"
             />
@@ -72,13 +72,13 @@ function Home() {
           <div className="relative md:col-span-7">
             <div className="grid grid-cols-5 gap-4">
               <img
-                src="/images/emerald-drop-earrings.jpg"
+                src={assetUrl("/images/emerald-drop-earrings.jpg")}
                 alt="Model wearing emerald and diamond drop earrings"
                 className="col-span-3 aspect-[3/4] w-full object-cover"
               />
               <div className="col-span-2 flex flex-col gap-4 pt-16">
-                <img src="/images/emerald-diamond-necklace-set.jpg" alt="Emerald diamond necklace set" className="aspect-[3/4] w-full object-cover" />
-                <img src="/images/ruby-pearl-jhumkas.jpg" alt="Ruby and pearl diamond jhumkas" className="aspect-square w-full object-cover" />
+                <img src={assetUrl("/images/emerald-diamond-necklace-set.jpg")} alt="Emerald diamond necklace set" className="aspect-[3/4] w-full object-cover" />
+                <img src={assetUrl("/images/ruby-pearl-jhumkas.jpg")} alt="Ruby and pearl diamond jhumkas" className="aspect-square w-full object-cover" />
               </div>
             </div>
             <div className="absolute -bottom-4 -left-4 -z-10 h-2/3 w-1/2 border border-gold/50" />
@@ -170,7 +170,7 @@ function Home() {
 
       {/* Bridal */}
       <section className="grid md:grid-cols-2">
-        <img src="/images/polki-emerald-choker.jpg" alt="Polki and emerald bridal choker" loading="lazy" className="h-full max-h-[760px] w-full object-cover" />
+        <img src={assetUrl("/images/polki-emerald-choker.jpg")} alt="Polki and emerald bridal choker" loading="lazy" className="h-full max-h-[760px] w-full object-cover" />
         <div className="flex flex-col justify-center bg-forest px-8 py-20 text-ivory md:px-16">
           <p className="eyebrow text-gold">Bridal</p>
           <h2 className="mt-5 text-4xl md:text-6xl">For Moments That Stay With You</h2>
@@ -214,7 +214,7 @@ function Home() {
       {/* Craftsmanship */}
       <section className="bg-card px-5 py-24 md:px-8">
         <div className="mx-auto grid max-w-7xl items-center gap-14 md:grid-cols-2">
-          <img src="/images/pearl-elephant-kada.jpg" alt="Close-up of gold elephant detailing on a pearl kada" loading="lazy" className="aspect-square w-full object-cover" />
+          <img src={assetUrl("/images/pearl-elephant-kada.jpg")} alt="Close-up of gold elephant detailing on a pearl kada" loading="lazy" className="aspect-square w-full object-cover" />
           <div>
             <p className="eyebrow text-gold">Craftsmanship</p>
             <h2 className="mt-4 text-4xl text-primary md:text-5xl">An Appreciation for Every Detail</h2>
@@ -234,7 +234,7 @@ function Home() {
         </div>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           {["diamond-lace-necklace-set", "pearl-diamond-jhumkas", "ruby-diamond-bangle", "diamond-tassel-pendant-set"].map((s) => (
-            <img key={s} src={`/images/${s}.jpg`} alt={s.replace(/-/g, " ")} loading="lazy" className="aspect-[3/4] w-full object-cover" />
+            <img key={s} src={assetUrl(`/images/${s}.jpg`)} alt={s.replace(/-/g, " ")} loading="lazy" className="aspect-[3/4] w-full object-cover" />
           ))}
         </div>
         <div className="mt-12 text-center">
