@@ -45,7 +45,6 @@ export type Product = {
   note: string;
 };
 
-export type GalleryTag = "Bridal" | "Natural Diamonds" | "Fine Gold" | "Necklaces & Earrings" | "Bangles & Bracelets";
 
 export const products: Product[] = [
   {
