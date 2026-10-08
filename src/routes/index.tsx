@@ -20,10 +20,39 @@ function Home() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 md:grid-cols-12 md:px-8 md:py-24">
+        {/* Mobile hero */}
+        <div className="md:hidden">
+          <div className="relative">
+            <img
+              src="/images/emerald-drop-earrings.jpg"
+              alt="Model wearing emerald and diamond drop earrings"
+              className="aspect-[4/5] w-full object-cover object-top"
+            />
+            <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-background to-transparent" />
+          </div>
+          <div className="fade-up -mt-10 relative px-6 pb-14 text-center">
+            <p className="eyebrow text-gold">For the Muse in You</p>
+            <h1 className="mt-4 text-[2.6rem] leading-[1.08] text-primary">
+              Elegance, Crafted to Be <em className="text-gold">Cherished</em>
+            </h1>
+            <p className="mx-auto mt-5 max-w-sm text-[0.95rem] leading-relaxed text-muted-foreground">
+              Natural diamond jewellery, bridal pieces and fine gold — designed for the moments you will want to remember.
+            </p>
+            <div className="mt-8 flex flex-col gap-3">
+              <Link
+                to="/collections"
+                className="inline-flex items-center justify-center bg-primary px-6 py-4 text-xs font-medium tracking-[0.2em] text-primary-foreground uppercase"
+              >
+                Explore Collections
+              </Link>
+              <WaButton message={messages.general} variant="outline" className="py-4">Enquire on WhatsApp</WaButton>
+            </div>
+          </div>
+        </div>
+        <div className="mx-auto hidden max-w-7xl items-center gap-10 px-8 py-24 md:grid md:grid-cols-12">
           <div className="fade-up md:col-span-5">
             <p className="eyebrow text-gold">For the Muse in You</p>
-            <h1 className="mt-6 text-5xl leading-[1.05] text-primary md:text-7xl">
+            <h1 className="mt-6 text-6xl leading-[1.05] text-primary lg:text-7xl">
               Elegance, Crafted to Be <em className="text-gold">Cherished</em>
             </h1>
             <p className="mt-7 max-w-md leading-relaxed text-muted-foreground">
@@ -52,7 +81,7 @@ function Home() {
                 <img src="/images/ruby-pearl-jhumkas.jpg" alt="Ruby and pearl diamond jhumkas" className="aspect-square w-full object-cover" />
               </div>
             </div>
-            <div className="absolute -bottom-4 -left-4 -z-10 hidden h-2/3 w-1/2 border border-gold/50 md:block" />
+            <div className="absolute -bottom-4 -left-4 -z-10 h-2/3 w-1/2 border border-gold/50" />
           </div>
         </div>
       </section>
@@ -188,8 +217,8 @@ function Home() {
           ))}
         </div>
         <div className="mt-12 text-center">
-          <Link to="/gallery" className="inline-flex border border-primary px-7 py-3.5 text-xs tracking-[0.2em] text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground">
-            View the Gallery
+          <Link to="/collections" className="inline-flex border border-primary px-7 py-3.5 text-xs tracking-[0.2em] text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground">
+            View the Collections
           </Link>
         </div>
       </section>

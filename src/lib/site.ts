@@ -14,8 +14,6 @@ export const messages = {
     "Hello Ikashi Jewels, I am looking for bridal jewellery. Could you please share your bridal designs and details?",
   custom:
     "Hello Ikashi Jewels, I would like to discuss a custom-designed piece. Could you please share the available customization options?",
-  gallery:
-    "Hello Ikashi Jewels, I saw a design in your gallery and would like to enquire about it.",
   product: (name: string) =>
     `Hello Ikashi Jewels, I am interested in ${name}. Could you please share its price, specifications, availability, and any applicable certification details?`,
 };
@@ -44,11 +42,9 @@ export type Product = {
   name: string;
   image: string;
   categories: Category[];
-  gallery: GalleryTag[];
   note: string;
 };
 
-export type GalleryTag = "Bridal" | "Natural Diamonds" | "Fine Gold" | "Necklaces & Earrings" | "Bangles & Bracelets";
 
 export const products: Product[] = [
   {
@@ -56,7 +52,6 @@ export const products: Product[] = [
     name: "Emerald Diamond Necklace Set",
     image: "/images/emerald-diamond-necklace-set.jpg",
     categories: ["Natural Diamond Jewellery", "Diamond Necklaces & Earrings", "Bridal Jewellery"],
-    gallery: ["Natural Diamonds", "Necklaces & Earrings", "Bridal"],
     note: "A diamond line necklace centred on an emerald, paired with matching earrings.",
   },
   {
@@ -64,7 +59,6 @@ export const products: Product[] = [
     name: "Polki & Emerald Bridal Choker",
     image: "/images/polki-emerald-choker.jpg",
     categories: ["Bridal Jewellery", "Fine Gold Jewellery", "Diamond Necklaces & Earrings"],
-    gallery: ["Bridal", "Fine Gold", "Necklaces & Earrings"],
     note: "A statement choker with pearls, emerald detailing and gold drops.",
   },
   {
@@ -72,7 +66,6 @@ export const products: Product[] = [
     name: "Diamond Lace Necklace Set",
     image: "/images/diamond-lace-necklace-set.jpg",
     categories: ["Natural Diamond Jewellery", "Diamond Necklaces & Earrings", "Bridal Jewellery"],
-    gallery: ["Natural Diamonds", "Necklaces & Earrings", "Bridal"],
     note: "An intricate lace-like diamond necklace with coordinating earrings.",
   },
   {
@@ -80,7 +73,6 @@ export const products: Product[] = [
     name: "Diamond Tassel Pendant Set",
     image: "/images/diamond-tassel-pendant-set.jpg",
     categories: ["Natural Diamond Jewellery", "Diamond Necklaces & Earrings"],
-    gallery: ["Natural Diamonds", "Necklaces & Earrings"],
     note: "A delicate diamond chain with a tassel pendant and matching drops.",
   },
   {
@@ -88,7 +80,6 @@ export const products: Product[] = [
     name: "Basra Pearl Elephant Kada",
     image: "/images/pearl-elephant-kada.jpg",
     categories: ["Fine Gold Jewellery", "Bangles & Bracelets", "Bridal Jewellery"],
-    gallery: ["Fine Gold", "Bangles & Bracelets", "Bridal"],
     note: "Pearls strung with sculpted gold elephant heads and a ruby accent.",
   },
   {
@@ -96,7 +87,6 @@ export const products: Product[] = [
     name: "Ruby & Diamond Bangle",
     image: "/images/ruby-diamond-bangle.jpg",
     categories: ["Natural Diamond Jewellery", "Bangles & Bracelets"],
-    gallery: ["Natural Diamonds", "Bangles & Bracelets"],
     note: "Alternating rows of rubies and diamonds in a slim, everyday bangle.",
   },
   {
@@ -104,7 +94,6 @@ export const products: Product[] = [
     name: "Diamond Solitaire Ring",
     image: "/images/ruby-diamond-bangle.jpg",
     categories: ["Engagement Rings", "Natural Diamond Jewellery"],
-    gallery: [],
     note: "A classic solitaire band — shown here worn with the ruby & diamond bangle.",
   },
   {
@@ -112,7 +101,6 @@ export const products: Product[] = [
     name: "Ruby & Pearl Diamond Jhumkas",
     image: "/images/ruby-pearl-jhumkas.jpg",
     categories: ["Diamond Necklaces & Earrings", "Natural Diamond Jewellery", "Bridal Jewellery"],
-    gallery: ["Necklaces & Earrings", "Natural Diamonds", "Bridal"],
     note: "Baguette-diamond tops with ruby domes and South Sea–style pearl drops.",
   },
   {
@@ -120,7 +108,6 @@ export const products: Product[] = [
     name: "Pearl & Diamond Gold Jhumkas",
     image: "/images/pearl-diamond-jhumkas.jpg",
     categories: ["Diamond Necklaces & Earrings", "Fine Gold Jewellery", "Custom-Designed Jewellery"],
-    gallery: ["Necklaces & Earrings", "Fine Gold"],
     note: "Floral diamond studs leading into openwork gold jhumkas with pearl fringe.",
   },
   {
@@ -128,7 +115,6 @@ export const products: Product[] = [
     name: "Emerald Drop Earrings",
     image: "/images/emerald-drop-earrings.jpg",
     categories: ["Diamond Necklaces & Earrings", "Natural Diamond Jewellery", "Custom-Designed Jewellery"],
-    gallery: ["Necklaces & Earrings", "Natural Diamonds"],
     note: "Faceted emerald drops framed in diamonds, elegant from day to evening.",
   },
 ];
