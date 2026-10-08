@@ -1,6 +1,38 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { collectionCards, messages, products } from "@/lib/site";
 import { Carousel, CtaBanner, GoldRule, ProductCard, WaButton } from "@/components/site";
+import { ArrowRight } from "lucide-react";
+import type { Category } from "@/lib/site";
+
+const pillars: { category: Category; eyebrow: string; title: string; short: string; copy: string; image: string; alt: string }[] = [
+  {
+    category: "Natural Diamond Jewellery",
+    eyebrow: "Certified Brilliance",
+    title: "Natural Diamonds",
+    short: "Diamonds",
+    copy: "GIA- and IGI-certified natural diamonds, set to capture light from every angle.",
+    image: "/images/diamond-lace-necklace-set.jpg",
+    alt: "Diamond lace necklace and earrings on a velvet bust",
+  },
+  {
+    category: "Bridal Jewellery",
+    eyebrow: "For the Day Itself",
+    title: "Bridal Jewellery",
+    short: "Bridal",
+    copy: "Statement chokers, layered sets and heirloom pieces for the moments that stay with you.",
+    image: "/images/polki-emerald-choker.jpg",
+    alt: "Polki and emerald bridal choker",
+  },
+  {
+    category: "Fine Gold Jewellery",
+    eyebrow: "Shaped by Tradition",
+    title: "Fine Gold",
+    short: "Gold",
+    copy: "Sculpted gold, pearls and gemstones — craftsmanship you can feel in every detail.",
+    image: "/images/pearl-elephant-kada.jpg",
+    alt: "Gold elephant pearl kada",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -95,12 +127,34 @@ function Home() {
           pieces chosen for their authentic craftsmanship and trusted purity, meant to be worn, treasured and
           passed on.
         </p>
-        <div className="mx-auto mt-14 grid max-w-4xl gap-10 sm:grid-cols-3">
-          {["Natural Diamonds", "Bridal Jewellery", "Fine Gold"].map((t) => (
-            <div key={t}>
-              <p className="font-serif text-3xl text-foreground">{t}</p>
-              <span className="mx-auto mt-3 block h-px w-10 bg-gold" />
-            </div>
+        <div className="mx-auto mt-16 grid max-w-6xl gap-6 text-left md:grid-cols-3">
+          {pillars.map((p, i) => (
+            <Link
+              key={p.category}
+              to="/collections"
+              search={{ category: p.category }}
+              className="group relative block overflow-hidden bg-forest focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+            >
+              <img
+                src={p.image}
+                alt={p.alt}
+                loading="lazy"
+                className="aspect-[3/4] w-full object-cover opacity-90 transition-all duration-700 group-hover:scale-105 group-hover:opacity-60"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-forest via-forest/30 to-transparent" />
+              <div className="absolute inset-3 border border-gold/0 transition-colors duration-500 group-hover:border-gold/60" />
+              <div className="absolute inset-x-0 bottom-0 p-7 text-ivory">
+                <p className="eyebrow text-gold">0{i + 1} — {p.eyebrow}</p>
+                <h3 className="mt-3 text-3xl md:text-4xl">{p.title}</h3>
+                <p className="mt-3 max-h-24 text-sm leading-relaxed text-ivory/80 transition-all duration-500 md:max-h-0 md:opacity-0 md:group-hover:max-h-24 md:group-hover:opacity-100 md:group-focus-visible:max-h-24 md:group-focus-visible:opacity-100">
+                  {p.copy}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-2 border-b border-gold pb-1 text-[0.7rem] tracking-[0.22em] text-gold uppercase">
+                  Explore {p.short}
+                  <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
