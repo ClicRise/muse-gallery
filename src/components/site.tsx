@@ -60,10 +60,10 @@ export function Header() {
       <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 md:h-24 md:px-8">
           <Link to="/" className="flex items-center gap-3" aria-label="Ikashi Jewels home">
-            <img src={assetUrl("/images/logo.jpg")} alt="Ikashi Jewels logo" className="size-12 rounded-full md:size-16" />
-            <span className="hidden flex-col leading-tight sm:flex">
-              <span className="font-serif text-2xl text-primary">Ikashi Jewels</span>
-              <span className="text-[0.6rem] tracking-[0.3em] text-gold uppercase">For the Muse in You</span>
+            <img src={assetUrl("/images/logo.jpg")} alt="Ikashi Jewels logo" className="size-12 shrink-0 rounded-full md:size-16" />
+            <span className="flex min-w-0 flex-col leading-tight">
+              <span className="whitespace-nowrap font-serif text-xl text-primary sm:text-2xl">Ikashi Jewels</span>
+              <span className="whitespace-nowrap text-[0.5rem] tracking-[0.16em] text-gold uppercase sm:text-[0.6rem] sm:tracking-[0.3em]">For the Muse in You</span>
             </span>
           </Link>
           <nav className="hidden items-center gap-9 lg:flex" aria-label="Main">
