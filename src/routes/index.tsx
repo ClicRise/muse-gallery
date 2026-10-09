@@ -226,24 +226,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Gallery preview */}
-      <section className="mx-auto max-w-7xl px-5 py-24 md:px-8">
-        <div className="mb-12 text-center">
-          <p className="eyebrow text-gold">Gallery</p>
-          <h2 className="mt-4 text-4xl text-primary md:text-5xl">A Closer Look</h2>
-        </div>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          {["diamond-lace-necklace-set", "pearl-diamond-jhumkas", "ruby-diamond-bangle", "diamond-tassel-pendant-set"].map((s) => (
-            <img key={s} src={assetUrl(`/images/${s}.jpg`)} alt={s.replace(/-/g, " ")} loading="lazy" className="aspect-[3/4] w-full object-cover" />
-          ))}
-        </div>
-        <div className="mt-12 text-center">
-          <Link to="/collections" className="inline-flex border border-primary px-7 py-3.5 text-xs tracking-[0.2em] text-primary uppercase transition-colors hover:bg-primary hover:text-primary-foreground">
-            View the Collections
-          </Link>
-        </div>
-      </section>
-
       <CtaBanner
         title="Find a Piece That Feels Like You"
         text="Tell us what you are looking for — an occasion, a stone, a feeling — and we will help you discover it."
