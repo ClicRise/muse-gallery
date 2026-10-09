@@ -86,40 +86,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Intro */}
-      <section className="relative overflow-hidden bg-card px-5 py-24 md:py-32">
-        <span aria-hidden className="pointer-events-none absolute -top-10 left-1/2 -translate-x-1/2 font-serif text-[16rem] leading-none text-gold/10 select-none">&ldquo;</span>
-        <div className="relative mx-auto max-w-4xl text-center">
-          <p className="eyebrow text-gold">The Ikashi Philosophy</p>
-          <h2 className="mx-auto mt-6 max-w-3xl text-4xl text-primary md:text-6xl">Jewellery That Speaks Without Words</h2>
-          <GoldRule className="mt-8" />
-          <blockquote className="mx-auto mt-10 max-w-3xl">
-            <p className="font-serif text-2xl leading-snug text-foreground italic md:text-[2rem]">
-              “A piece of fine jewellery should feel like it was always meant to be yours — quiet in its confidence,
-              timeless in its grace.”
-            </p>
-            <footer className="eyebrow mt-6 text-muted-foreground">— Ikashi Jewels</footer>
-          </blockquote>
-          <p className="mx-auto mt-10 max-w-2xl leading-relaxed text-muted-foreground">
-            We bring together natural diamond jewellery, bridal pieces and fine gold — chosen for authentic
-            craftsmanship and trusted purity, and meant to be worn, treasured and passed on.
-          </p>
-        </div>
-        <dl className="relative mx-auto mt-16 grid max-w-5xl border-y border-gold/40 md:grid-cols-3">
-          {[
-            ["Certified Natural Diamonds", "A specialization in GIA- and IGI-certified natural diamonds."],
-            ["Authentic Craftsmanship", "Considered settings and finishing, down to the smallest detail."],
-            ["Trusted Purity", "Fine materials, with details shared openly on enquiry."],
-          ].map(([t, d], i) => (
-            <div key={t} className={`px-6 py-8 text-center ${i ? "border-t border-gold/40 md:border-t-0 md:border-l" : ""}`}>
-              <span aria-hidden className="mx-auto mb-4 block size-1.5 rotate-45 bg-gold" />
-              <dt className="font-serif text-2xl text-primary">{t}</dt>
-              <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</dd>
-            </div>
-          ))}
-        </dl>
-      </section>
-
       {/* Collections */}
       <section className="mx-auto max-w-7xl px-5 py-24 md:px-8">
         <div className="mb-14 flex flex-wrap items-end justify-between gap-6">
