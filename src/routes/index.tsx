@@ -150,10 +150,10 @@ function Home() {
 
       {/* Certification */}
       <section className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
-        <div className="grid items-center gap-14 md:grid-cols-2">
+        <div className="grid items-center gap-14 md:grid-cols-[1.15fr_0.85fr]">
           <div>
             <p className="eyebrow text-gold">Natural Diamonds</p>
-            <h2 className="mt-4 text-4xl text-primary md:text-5xl">Certified Natural Diamonds</h2>
+            <h2 className="mt-4 text-4xl text-primary md:text-4xl xl:text-[2.75rem] xl:whitespace-nowrap">Certified Natural Diamonds</h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
               Ikashi Jewels specializes in GIA- and IGI-certified natural diamonds. Independent certification from
               recognised gemological laboratories offers clarity about a diamond's characteristics.
@@ -179,11 +179,11 @@ function Home() {
 
       {/* Craftsmanship */}
       <section className="bg-card px-5 py-24 md:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-14 md:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 md:grid-cols-[0.85fr_1.15fr]">
           <img src={assetUrl("/images/pearl-elephant-kada.jpg")} alt="Close-up of gold elephant detailing on a pearl kada" loading="lazy" className="aspect-square w-full object-cover" />
           <div>
             <p className="eyebrow text-gold">Craftsmanship</p>
-            <h2 className="mt-4 text-4xl text-primary md:text-5xl">An Appreciation for Every Detail</h2>
+            <h2 className="mt-4 text-4xl text-primary md:text-4xl xl:text-[2.75rem] xl:whitespace-nowrap">An Appreciation for Every Detail</h2>
             <p className="mt-6 leading-relaxed text-muted-foreground">
               A sculpted elephant clasp. The setting of a single stone. The fall of a pearl fringe. Fine jewellery
               lives in the details, and every piece is considered for how it catches light and how it feels to wear.

@@ -213,7 +213,7 @@ export function CtaBanner({ title, text, message, label }: { title: string; text
   return (
     <section className="bg-primary px-5 py-20 text-center text-primary-foreground md:py-28">
       <GoldRule />
-      <h2 className="mx-auto mt-8 max-w-2xl text-4xl md:text-6xl">{title}</h2>
+      <h2 className="mx-auto mt-8 w-full text-4xl md:text-5xl lg:text-6xl lg:whitespace-nowrap">{title}</h2>
       <p className="mx-auto mt-6 max-w-xl leading-relaxed text-ivory/75">{text}</p>
       <WaButton message={message} variant="gold" className="mt-10">{label}</WaButton>
     </section>
