@@ -186,13 +186,12 @@ export function ProductCard({ p, category }: { p: Product; category?: string | u
           className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
         />
       </div>
-      <div className="flex flex-1 flex-col p-6 text-center sm:p-7">
-        <p className="eyebrow flex min-h-10 items-center justify-center leading-4 text-gold">{category ?? p.categories[0]}</p>
-        <h3 className="mt-4 min-h-16 text-xl leading-tight text-foreground sm:text-2xl">{p.name}</h3>
-        <p className="mt-4 min-h-6 text-sm text-muted-foreground">Enquire for Price</p>
-        <WaButton message={messages.product(p.name)} variant="outline" className="mt-auto w-full px-2 pt-7 text-[0.65rem] tracking-[0.12em] whitespace-nowrap sm:px-3 sm:text-xs sm:tracking-[0.16em]">
-          <span className="sm:hidden">WhatsApp</span>
-          <span className="hidden sm:inline">Enquire on WhatsApp</span>
+      <div className="flex flex-1 flex-col p-5 text-center">
+        <p className="eyebrow text-gold">{category ?? p.categories[0]}</p>
+        <h3 className="mt-2 text-2xl text-foreground">{p.name}</h3>
+        <p className="mt-2 text-sm text-muted-foreground">Enquire for Price</p>
+        <WaButton message={messages.product(p.name)} variant="outline" className="mt-5 w-full px-3 whitespace-nowrap">
+          Enquire on WhatsApp
         </WaButton>
       </div>
     </article>
