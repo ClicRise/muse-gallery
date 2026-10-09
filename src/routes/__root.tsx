@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  redirect,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
@@ -76,6 +77,12 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  beforeLoad: ({ location }) => {
+    // Demo mode: keep every route except the homepage inaccessible.
+    if (location.pathname !== "/") {
+      throw redirect({ to: "/" });
+    }
+  },
   head: () => ({
     meta: [
       { charSet: "utf-8" },

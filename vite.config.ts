@@ -17,6 +17,7 @@ export default defineConfig({
       enabled: true,
       crawlLinks: true,
       failOnError: true,
+      filter: (page) => page.path === "/" || page.path === "/muse-gallery/",
     },
   },
 });

@@ -5,9 +5,6 @@ import { assetUrl, INSTAGRAM_HANDLE, INSTAGRAM_URL, messages, waLink, type Produ
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/about", label: "About" },
-  { to: "/collections", label: "Collections" },
-  { to: "/contact", label: "Contact" },
 ] as const;
 
 export function GoldRule({ className = "" }: { className?: string }) {
