@@ -61,7 +61,7 @@ function Collections() {
       <section className="bg-forest px-5 py-20 text-center text-ivory md:py-24">
         <GoldRule />
         <p className="eyebrow mt-6 text-gold">Custom-Designed Jewellery</p>
-        <h2 className="mx-auto mt-4 max-w-2xl text-4xl md:text-5xl">Looking for something specific?</h2>
+        <h2 className="mx-auto mt-4 w-full text-4xl md:text-5xl xl:whitespace-nowrap">Looking for something specific?</h2>
         <p className="mx-auto mt-6 max-w-xl leading-relaxed text-ivory/75">
           Share your jewellery preferences or design inspiration with Ikashi Jewels to enquire about available customization options.
         </p>

@@ -202,7 +202,7 @@ export function PageHero({ eyebrow, title, intro }: { eyebrow: string; title: st
   return (
     <section className="border-b border-border px-5 py-20 text-center md:py-28">
       <p className="eyebrow fade-up text-gold">{eyebrow}</p>
-      <h1 className="fade-up mx-auto mt-5 max-w-3xl text-5xl text-primary md:text-7xl">{title}</h1>
+      <h1 className="fade-up mx-auto mt-5 w-full text-5xl text-primary md:text-6xl xl:text-7xl xl:whitespace-nowrap">{title}</h1>
       <GoldRule className="mt-8" />
       {intro && <p className="mx-auto mt-8 max-w-2xl leading-relaxed text-muted-foreground">{intro}</p>}
     </section>
